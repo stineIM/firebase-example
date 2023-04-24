@@ -28,6 +28,48 @@ function createUser() {
         console.log(e.code); 
         console.log(e.message);
     });
-    
+}
+// Logger inn bruker med epost og passord 
+
+function login() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value; 
+  auth.signInWithEmailAndPassword(email, password)
+  .then((userCredentials) => {
+      sessionStorage.setItem("uid", userCredentials.user.uid)
+      window.location.href = "./home.html"
+  })
+  .catch((error) => {
+      console.error("Failed: " + error.message); 
+  })
 }
 
+// Oppretter bruker med epost og passord 
+
+function signUp() {
+  const email = document.getElementById("new_email").value;
+  const password = document.getElementById("new_password").value; 
+  const name = document.getElementById("name").value; 
+
+  auth.createUserWithEmailAndPassword(email, password)
+  // Lagrer også brukeren i collection "users"
+   .then((userCredentials) => {
+      firebase.firestore().collection("users").doc().set({
+          name: name, 
+          email: email,
+          userId: userCredentials.user.uid
+      })
+      .then(function () {
+          window.location.href = "./home.html"; 
+      })
+
+      console.log(res.userCredentials)
+  })
+   
+  .catch((err) => {
+      alert(err.message)
+      console.log(err.code); 
+      console.log(err.message);
+  });
+  
+}
