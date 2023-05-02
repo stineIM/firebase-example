@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/home.css">
+    <title>IM Chat - Heim</title>
+</head>
+<!--Treng denne for å sjå om bruker er pålogga.-->
+<script>
+    const uid = sessionStorage.getItem("uid");
+    if (uid == null) {
+        window.location.href = "index.html";
+    }
+</script>
+<body>
+    <nav>
+        <div id="logo">
+        </div>
+        <div id="navlinks">
+            <a href="home.html">Heim</a>
+            <a href="about.html">Om denne sida</a>
+            <a href="profile.html">Min profil</a>
+            <a href="" onclick="logout();">Logg ut</a>
+        </div>
+    </nav>
+    <main>
+        <div>
+            <h1>IM Chaten</h1>
+        </div>
+        <div>
+            <h3>Her kan du legge til meldinger.</h3>
+            <div class="messages" id="messageContainer">
+
+            </div>
+        </div>
+
+
+    </main>
+    <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore-compat.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/logout.js"></script>
+</body>
+
+</html>

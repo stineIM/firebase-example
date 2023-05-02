@@ -35,8 +35,11 @@ function login() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value; 
   auth.signInWithEmailAndPassword(email, password)
+  // Sjekker om bruker er pålogga
   .then((userCredentials) => {
-      sessionStorage.setItem("uid", userCredentials.user.uid)
+    // Oppretter ein sessionStorage variabel i nettlesaren. Denne brukes for å sjå om bruker er pålogga.
+      sessionStorage.setItem("uid", userCredentials.user.uid) 
+      // Redirect to home.html 
       window.location.href = "./home.html"
   })
   .catch((error) => {
