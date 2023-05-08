@@ -11,17 +11,24 @@
 
 <body>
     <main>
-        <h3>Opprett ny bruker</h3>
+        <h1>Føyen sitt admin system</h1>
+
+        <h3>Logg inn</h3>
         <div>
-            <label>Navn:</label><br>
-            <input id="name" type="text">
+            <label>Epost:</label><br>
+            <input id="email" type="email">
         </div>
+        <div>
+            <label>Passord:</label><br>
+            <input id="password" type="password">
+        </div>
+
         <div class="signUpBox">
-            <button id="btnCreate" onclick="createUser()">Opprett bruker</button>
+            <button id="btnCreate" onclick="login()">Logg inn</button>
         </div>
 
         <div id="info">
-            
+            <p>Dersom du ikke har bruker, <a href="register.html">opprett en her</a></p>
         </div>
     </main>
 
@@ -32,6 +39,7 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore-compat.js"></script>
 
-    <script src="js/login.js"></script>
+    <script src="js/register.js"></script>
 </body>
+
 </html>

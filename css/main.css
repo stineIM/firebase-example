@@ -5,8 +5,37 @@ body  {
 }
 
 main {
-    max-width: 500px;
+    max-width: 1390px;
     margin:auto;
 }
 
+#userform {
+    display: none;
+}
 
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+/************ TABELL **************/
+
+#tableLink {
+    color: blue; 
+}
+
+#tableLink:hover {
+    cursor:pointer;
+}
+
+.users {
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.users td {
+    border: 1px solid gray;
+    padding: 10px;
+}
+
+/************ END TABELL **********/ 
