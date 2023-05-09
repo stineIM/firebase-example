@@ -1,11 +1,10 @@
-// HER LEGGER DU INN INFOEN DIN FRÅ FIREBASE
 
 const firebaseApp = firebase.initializeApp({
     apiKey: // DIN,
     authDomain: // DIN,
-    projectId: // DIN,
-    storageBucket: // DIN,
-    messagingSenderId: // DIN,
+    projectId:// DIN,
+    storageBucket: // DIN
+    messagingSenderId: // DIN
     appId: // DIN
 });
 ///////////////////////////////////////////////////////////
@@ -52,8 +51,7 @@ function updateUser(docid) {
         lastname: lname,
         address: address,
         zip: zip,
-        city: city,
-        category: category
+        city: city
     })
         .then(() => {
             console.log("Document successfully updated!");
