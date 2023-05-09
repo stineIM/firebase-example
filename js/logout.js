@@ -4,6 +4,6 @@ const auth = firebaseApp.auth();
 function logout() {
     auth.signOut().then(() => {
         sessionStorage.removeItem("uid");
-        window.location.ref = "login.html";
+        window.location.href = "login.html";
     });
 }
